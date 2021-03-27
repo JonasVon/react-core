@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="test"></div>
+    <script src="../react.development.js"></script>
+    <script src="../react-dom.development.js"></script>
+    <script type="text/javascript">
+        //React.createElement可以创建一个虚拟DOM
+        const DOM = React.createElement("h1", {id: "title"}, "Hello React")
+        ReactDOM.render(DOM, document.getElementById("test"))
+    </script>
+</body>
+</html>
