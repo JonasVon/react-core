@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .mClass{
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+<div id="test"></div>
+<script src="../react.development.js"></script>
+<script src="../react-dom.development.js"></script>
+<script src="../babel.min.js"></script>
+<script type="text/babel">
+  const text = 'Hello React'
+  const id = 'title'
+  const className = "mClass"
+  const DOM = (
+    <div id={id}>
+      <h1 className={className}>{text}</h1>
+      <div style={{color: '#333'}}>哈哈哈</div>
+    </div>
+  )
+  /**
+   * jsx语法规则：
+   * 1. 虚拟DOM必须仅有一个根标签,不能多个一级标签组成一个虚拟DOM；层次复杂时可以通过()包裹换行
+   * 2. 在React中，小写字母开头的标签会被转换为html标签；大写字母开头的标签会转换为React组件(自定义组件)
+   * 3. 在标签中如果需要插入js表达式，则通过{}插入即可
+   * 4. 在jsx中，如果需要指定class属性，则使用className;因为class是类的关键字;style则需要一个js对象，属性转为小驼峰
+   * 5. 标签必须闭合(自结束或者结束标签)
+   */
+  ReactDOM.render(DOM, document.getElementById("test"))
+</script>
+</body>
+</html>
